@@ -3,16 +3,46 @@
 <head>
     <meta charset="utf-8">
     <title>Demo</title>
+    <style>
+      p.test {
+        font-weight: bold;
+      }
+    </style>
+
 </head>
 <body>
     <a href="http://jquery.com/">jQuery</a>
+
+    <p> Hello, Hunor! </p>
+    <p> Hello, Serena! </p>
+
+
     <script src="jquery.js"></script>
     <script>
     $( document ).ready(function() {
         $( "a" ).click(function( event ) {
-            alert( "Thanks for visiting!" );
+            alert( "The link no longer takes you to the website" );
+            event.preventDefault();
+            $ ( this ).hide( "slow");
         });
+
+        $( "p" ).addClass( "test" );
+
+        $( "p" ).click(function() {
+          alert("HOW ARE YOU!");
+          event.preventDefault();
+          $ ( this ).hide( "slow");
+        });
+
+
+
+        // $( "p" ).removeClass( "test" );
+
+
     });
+
+
+
     </script>
 </body>
 </html>
